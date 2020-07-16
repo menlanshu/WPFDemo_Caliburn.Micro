@@ -19,7 +19,7 @@ namespace WPFUI
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
             //base.OnStartup(sender, e);
-            DisplayRootViewFor<ItemsControlViewModel>();
+            DisplayRootViewFor<DataGridViewModel>();
         }
     }
 }
