@@ -1,8 +1,8 @@
 ﻿using DemoLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using WPFUI.Models;
 
 namespace DemoLibrary
 {
@@ -112,7 +112,13 @@ namespace DemoLibrary
 
         }
 
-        private PersonModel GetPerson(int id)
+        public void AddPerson(IList<PersonModel> people)
+        {
+            int maxId = people.Count == 0 ? 1 : people.ToList().Max(x => x.PersonId);
+            people.Add(GetPerson(maxId + 1));
+        }
+
+        public PersonModel GetPerson(int id)
         {
             PersonModel output = new PersonModel();
 
@@ -165,9 +171,9 @@ namespace DemoLibrary
             return _lowEndDate.AddDays(_rnd.Next(_daysFromLowDate));
         }
 
-        private T GetRandomItem<T>(T[] data)
+        public T GetRandomItem<T>(T[] data)
         {
-            return data[_rnd.Next(0, data.Length)];
+            return data.Length == 0 ? default(T) : data[_rnd.Next(0, data.Length)];
         }
     }
 }

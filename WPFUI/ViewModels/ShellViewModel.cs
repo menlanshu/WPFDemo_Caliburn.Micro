@@ -1,5 +1,5 @@
 ﻿using Caliburn.Micro;
-using WPFUI.Models;
+using DemoLibrary.Models;
 
 namespace WPFUI.ViewModels
 {
