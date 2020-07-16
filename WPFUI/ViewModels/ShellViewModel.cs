@@ -7,15 +7,15 @@ namespace WPFUI.ViewModels
     {
         private string _firstName = "Long";
         private string _lastname;
-        private BindableCollection<Person> _people = new BindableCollection<Person>();
-        private Person _selectedPerson;
+        private BindableCollection<PersonModel> _people = new BindableCollection<PersonModel>();
+        private PersonModel _selectedPerson;
 
 
         public ShellViewModel()
         {
-            People.Add(new Person { FirstName = "Fu", LastName = "Long" });
-            People.Add(new Person { FirstName = "Kuang", LastName = "Dali" });
-            People.Add(new Person { FirstName = "Hua", LastName = "Tingting" });
+            People.Add(new PersonModel { FirstName = "Fu", LastName = "Long" });
+            People.Add(new PersonModel { FirstName = "Kuang", LastName = "Dali" });
+            People.Add(new PersonModel { FirstName = "Hua", LastName = "Tingting" });
             
         }
 
@@ -46,13 +46,13 @@ namespace WPFUI.ViewModels
             get { return $"{FirstName} {LastName}"; }
         }
 
-        public BindableCollection<Person> People
+        public BindableCollection<PersonModel> People
         {
             get { return _people; }
             set { _people = value; }
         }
 
-        public Person SelectedPerson
+        public PersonModel SelectedPerson
         {
             get { return _selectedPerson; }
             set {
